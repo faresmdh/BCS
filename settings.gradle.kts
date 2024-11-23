@@ -15,7 +15,7 @@ pluginManagement {
             url = uri("https://maven.pkg.github.com/Cuberto/liquid-swipe-android")
             credentials {
                 username = "faresmdh"
-                password = "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"
+                password = "GITHUB_ACCESS_TOKEN"
             }
         }
     }
@@ -31,7 +31,7 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/Cuberto/liquid-swipe-android")
             credentials {
                 username = "faresmdh"
-                password = ""
+                password = "GITHUB_ACCESS_TOKEN"
             }
         }
     }
