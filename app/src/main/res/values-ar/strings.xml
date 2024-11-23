@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Bouira Computer Science</string>
+    <string name="skip">تخطي</string>
+    <string name="title1">Hello, BCS 2.0!</string>
+    <string name="title2">ما هذا التطبيق</string>
+    <string name="title3">الحساب ضروري !</string>
+    <string name="title4">إستمتع !</string>
+    <string name="desc1">شكرا لتحميلك Bouira Computer Science إصدار 2.0. هذا الإصدار أفضل من الإصدار السابق بكثير, إسحب لليسار للمواصلة!</string>
+    <string name="desc2">منصة صغيرة للوصول إلى المحاضرات, TDs, TPs, الإمتحانات والكثير فقط بضغطة زر.</string>
+    <string name="desc3">لحماية التطبيق من الهجمات الإلكتترونية والإستعمالات الخاطئة, أنت تحتاج إلى حساب. إذا كنت لا تملك واحدا بالفعل، فبإمكانك إنشاء حساب جديد.</string>
+    <string name="desc4">تطبيقنا يدعم حفظ الملفات بدون أنترنيت.أنت فقط بحاجة لتحميل ال pdf مرة واحدة ثم الحفاظ عليه للأبد. إضغط على زر البدء لتشغيل التطبيق.</string>
+    <string name="start">إبدأ</string>
+    <string name="Welcome">تسجيل الدخول إلى BCS</string>
+    <string name="if_you_don_t_have_an_account_create_a_new_one">Iإذا كنت لا تملك حسابا, فقط قم بإنشاء واحد</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="register"><u>إنشاء حساب</u></string>
+    <string name="made_with_by_meddahi_fares">صنع بال ❤️ من طرف مداحي فارس</string>
+    <string name="email_error1">البريد الإلكتروني ضروري!</string>
+    <string name="email_error2">بريد إلكتروني غير صالح</string>
+    <string name="password_error1">كلمة المرور ضرورية !</string>
+    <string name="loading_please_wait">جاري التحميل، يرجى الإنتظار</string>
+    <string name="loading_message">نحن نقوم بمعالجة طلبك</string>
+    <string name="no_internet">لا يوجد إتصال بالإنترنت !</string>
+    <string name="no_internet_desc">يرجى التحقق من إتصال الإنترنيت لديك ثم إعادة المحاولة</string>
+    <string name="close">إغلاق</string>
+    <string name="register2">إنشاء حساب</string>
+    <string name="create_bcs_account">إنشاء حساب BCS</string>
+    <string name="full_name">الإسم الكامل</string>
+    <string name="nameError1">الإسم ضروري</string>
+    <string name="nameError2">إسم غير صالح</string>
+    <string name="password_error2">كلمة سر ضعيفة</string>
+    <string name="create_an_account_with_singel_click">إنشاء حساب بضغطة زر واحدة</string>
+    <string name="wrong_email_password">بريد إلكتروني أو\و كلمة مرور خاطئة</string>
+    <string name="email_error3">مسجل مسبقا</string>
+    <string name="welcome_back">مرحبا مجددا 👋</string>
+    <string name="your_account">حسابي</string>
+    <string name="change_account_and_app_settings">تغيير إعدادات الحساب والتطبيق</string>
+    <string name="night_mode">الوضع المظلم</string>
+    <string name="change_app_night_mode_settings">تغيير إعدادات الوضع المظلم للتطبيق</string>
+    <string name="language">اللغة</string>
+    <string name="change_app_language_settings">تغيير إعدادات لغة التطبيق</string>
+    <string name="about_app">حول</string>
+    <string name="about_app_and_developer">حول التطبيق والمطور</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="change_youraccount_password">تغيير كلمة مرور حسابك</string>
+    <string name="sign_out">تسجيل الخروج</string>
+    <string name="sign_out_desc">تسجيل الخروج من حسابك</string>
+    <string name="auto">حسب النظام</string>
+    <string name="night">الوضع المظلم</string>
+    <string name="light">الوضع النهاري</string>
+    <string name="apply">تطبيق</string>
+    <string name="english">إنجليزية</string>
+    <string name="french">فرنسية</string>
+    <string name="arabic">عربية</string>
+    <string name="cancel">إلغاء</string>
+    <string name="error">خطأ</string>
+    <string name="no_match">لا يوجد تطابق</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="confirm_new_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="done">تم</string>
+    <string name="what_is_computer_sciences_for_bouira_university_students">ما هو تطبيق Bouira Computer Science (BCS) ?</string>
+    <string name="about_app_desc">هو تطبيق أندرويد مفتوح المصدر, والذي صنع خصيصا لطلبة جامعة البويرة تخصص إعلام آلي للوصول إلى محاضراتهم, TDs, TPs, امتحاناتهم... بطريقة منظمة ودون الحاجة إلى وجود أنترنيت.\nيجب الإنتباه إلى أنك بحاجة لتحميل ملف الpdf للمرة الأولى فقط.</string>
+    <string name="open_source">مفتوح المصدر ?</string>
+    <string name="open_source_desc">كما قلت, بما أنه مفتوح المصدر لذا, بإمكانك فعل الأشياء التالية :\n1 - الحصول على الكود المصدري من الرابط في الأسفل.\n2 - إذا كنت في طريقك لتعلم برمجة تطبيقات الأندرويد, بإمكانك إستخدام الكود المصدري في تعلم كيفية عمل التطبيق.\n3 - بإمكانك محاولة تحسين التطبيق من خلال تعديل الكود المصدري والتواصل معي في حالة وجود أي تحسينات أو إقتراحات على fares.mdh1@gmail.com.</string>
+    <string name="open_source_libraries">مكتبات يستخدمها التطبيق</string>
+    <string name="open_source_lib_desc">هذا التطبيق يستخدم بعض المكتبات :\n1 - Android 12 splash screen API : androidx.core:core-splashscreen:1.0.1\n2 - Lottie animations player :\ncom.airbnb.android:lottie:6.3.0\n3 - Google Gson library : \ncom.google.code.gson:gson:2.10.1\n4 - Glide image loader : \ncom.github.bumptech.glide:glide:4.16.0\n5 - PDF Viewer library : com.github.iamyashchouhan:AndroidPdfViewer:1.0.3\n6 - Liquid Swipe : \ncom.github.Chrisvin:LiquidSwipe:1.0.0</string>
+    <string name="about_developer">حول المطور</string>
+    <string name="get_source_code_from_github">الحصول على الكود المصدري من Github</string>
+    <string name="developement_info">معلومات التطوير</string>
+    <string name="this_app_is_made">صنع التطبيق بواسطة Android Studio IDE.\nXML Language من أجل واجهة المستخدم (UI)\nKOTLIN Language كلغة برمجة\nSupabase كقاعدة بيانات\nSupabase sdk for Kotlin</string>
+    <string name="developer_sm">مرحبا, أنا مداحي فارس, طالب إعلام آلي بجامعة البويرة مطور تطبيقات أندرويد.\nأنا سعيد لمشاركتي معكم هذا المشروع البسيط. لأية أسئلة أو معلومات أكثر لا تتردد في التواصل معي على واحدة من مواقع التواصل الإجتماعي الخاصة بي :</string>
+    <string name="version_1_0_beta">إصدار 2.0</string>
+    <string name="we_will_show_modules_and_documents_relative_to_your_level_you_can_change_your_level_later">سنعرض عليك مقاييس وملفات متعلقة بمستواك الجامعي. تستطيع تغيير مستواك الجامعي لاحقا!</string>
+    <string name="choose_your_level">إختر مستواك الجامعي!</string>
+    <string name="restart">أعد تشغيل التطبيق!</string>
+    <string name="change_level">تغيير المستوى الجامعي</string>
+    <string name="change_level_desc">تغيير مستواك الحالي</string>
+</resources>

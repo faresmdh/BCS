@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ActivityLogin"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/madeBy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/made_with_by_meddahi_fares"
+        android:gravity="center"
+        android:textColor="@color/text"
+        android:textSize="13sp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signInBtn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:cornerRadius="8dp"
+        android:text="@string/sign_in"
+        android:textColor="@color/background"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toTopOf="@id/registerTV"/>
+
+    <TextView
+        android:id="@+id/registerTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/madeBy"
+        android:text="@string/register"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:layout_marginBottom="64dp"/>
+
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_edit_text"
+        android:drawableStart="@drawable/ic_focused_password"
+        android:drawablePadding="8dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textAlignment="viewStart"
+        android:paddingHorizontal="8dp"
+        android:textColorHint="@color/text"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/signInBtn" />
+
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:drawableStart="@drawable/ic_focused_email"
+        android:drawablePadding="8dp"
+        android:textAlignment="viewStart"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="8dp"
+        android:textColorHint="@color/text"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordET" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/if_you_don_t_have_an_account_create_a_new_one"
+        app:layout_constraintBottom_toTopOf="@id/emailET"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:textColor="@color/text"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Welcome"
+        app:layout_constraintBottom_toTopOf="@id/tv1"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:textColor="@color/primary"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv2"
+        app:lottie_rawRes="@raw/login"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:padding="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

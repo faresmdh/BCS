@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BouiraComputerScience" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="fontFamily">@font/bcs</item>
+    </style>
+
+    <style name="Theme.BouiraComputerScience" parent="Base.Theme.BouiraComputerScience" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/backgroundVariant</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
+        <item name="windowSplashScreenAnimationDuration">200</item>
+        <item name="postSplashScreenTheme">@style/Theme.BouiraComputerScience</item>
+    </style>
+</resources>
