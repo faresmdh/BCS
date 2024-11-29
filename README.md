@@ -1,4 +1,4 @@
-# Bouira Computer Science
+# Bouira Computer Society
 It is a special application for students of computer science at the University of Bouira that allows students to access their lessons in addition to series of TP, TD, and others.
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
     <img src="https://github.com/faresmdh/BCS/blob/master/1.jpg" alt="Image 1" width="200">
@@ -7,11 +7,11 @@ It is a special application for students of computer science at the University o
 </div>
 
 <a style="margin-top:64px;" href="https://play.google.com/store/apps/details?id=m.ify.computersciencebouira&hl=en">
-  <img src="https://img.shields.io/badge/Bouira_Computer_Science-2.0-purple?style=flat"/>
+  <img src="https://img.shields.io/badge/Bouira_Computer_Society-2.0-purple?style=flat"/>
 </a>
 
 ## ✨ Features
-Hello Developers! this repository contains the source code of <a href="https://play.google.com/store/apps/details?id=m.ify.computersciencebouira&hl=en">Bouira Computer Science</a> android app. Here are the BCS app features:
+Hello Developers! this repository contains the source code of <a href="https://play.google.com/store/apps/details?id=m.ify.computersciencebouira&hl=en">Bouira Computer Society</a> android app. Here are the BCS app features:
 - ### 🚀 Customised level
 To make the app easy to use, the student must choose his current level so the app show him the modules of his level.
 - ### 🤝 User friendly interface
