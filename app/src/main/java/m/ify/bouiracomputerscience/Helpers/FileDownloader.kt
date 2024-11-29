@@ -23,7 +23,7 @@ class FileDownloader(
 ) {
 
     private val downloadManager: DownloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-    private val tmpPdfPath: String = File(context.getExternalFilesDir(null).toString() + "/.tmp.pdf").toString()
+    private val tmpPdfPath: String = File(context.getExternalFilesDir(null).toString() + "/.${pdf.id}.pdf").toString()
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     fun downloadWithProgressDialog() {
