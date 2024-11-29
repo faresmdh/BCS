@@ -23,7 +23,7 @@ You can use BCS offline, just make sure to download the PDFs you need when you a
 
 ## 🌟 Requirements
 To protect BCS from spam and abuse, you just need an account you can either sign in or create a new one.
-<p>Important note : We just need email and student name, and don't worry your data are safe with us! You can read more about <a href="https://computer-science-bouira.web.app/privacy-policy.html">BCS privacy policy</a>.</p>
+<p>Important note : We just need email and student name, and don't worry your data are safe with us! You can read more about <a target="_blank" href="https://bouira-computer-society.netlify.app/privacy-policy">BCS privacy policy</a>.</p>
 
 ## 🤝 Contributing
 For now BCS is one person made "<a href="https://github.com/faresmdh">Meddahi Fares</a>", but i'm ready for any contributions in the future!
