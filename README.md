@@ -7,7 +7,7 @@ It is a special application for students of computer science at the University o
 </div>
 
 <a style="margin-top:64px;" href="https://play.google.com/store/apps/details?id=m.ify.computersciencebouira&hl=en">
-  <img src="https://img.shields.io/badge/Bouira_Computer_Society-2.0-purple?style=flat"/>
+  <img src="https://img.shields.io/badge/Bouira_Computer_Society-2.5-purple?style=flat"/>
 </a>
 
 ## ✨ Features
