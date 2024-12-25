@@ -1,5 +1,5 @@
 # BCS android Changelog
-## [2.5] - 2024-11-30
+## [2.5] - 2024-12-21
 ### Added
 - Youtube playlists in modules activity
 - Dev channel
