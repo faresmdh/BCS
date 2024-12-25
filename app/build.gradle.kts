@@ -14,10 +14,10 @@ android {
 
     defaultConfig {
         applicationId = "m.ify.computersciencebouira"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 10
-        versionName = "2.1"
+        versionName = "2.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -67,6 +67,8 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.github.iamyashchouhan:AndroidPdfViewer:1.0.3")
     implementation("androidx.core:core-splashscreen:1.0.0-beta02")
+    implementation("com.itextpdf:itext7-core:7.2.5") // Update the version as per latest available
+
 
 
 

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card"
+        app:strokeWidth="0dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/backgroundVariant"
+        android:layoutDirection="rtl">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/avatarCV"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="25dp"
+                app:strokeColor="@color/primary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/fares"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/meddahi_fares"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/avatarCV"
+                android:layout_marginStart="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/title"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"/>
+
+            <TextView
+                android:id="@+id/dateTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/avatarCV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameTV"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/text"
+                android:textSize="11sp"
+                android:textAlignment="viewStart"/>
+
+            <TextView
+                android:id="@+id/descTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/avatarCV"
+                android:layout_marginTop="12dp"
+                android:textSize="12sp"
+                android:lineSpacingExtra="6dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/text"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

@@ -29,11 +29,11 @@
                 android:src="@drawable/pdf"/>
 
             <ImageView
-                android:id="@+id/offlineIV"
+                android:id="@+id/networkIV"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_offline"
-                app:tint="@color/text"
+                android:src="@drawable/network"
+                app:tint="@color/primary"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -52,7 +52,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv1"
-                app:layout_constraintEnd_toStartOf="@id/offlineIV"/>
+                app:layout_constraintEnd_toStartOf="@id/networkIV"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

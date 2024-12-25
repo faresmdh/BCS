@@ -1,13 +1,12 @@
 package m.ify.computersciencebouira.Activities
 
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
+import m.ify.bouiracomputerscience.API.Playlist
 import m.ify.bouiracomputerscience.Adapters.AdapterType
 import m.ify.computersciencebouira.API.PDF
 import m.ify.computersciencebouira.Adapters.AdapterPDFs
@@ -36,36 +35,44 @@ class ActivityPDFs : AppCompatActivity() {
         b.moduleTV.text = module_desc
 
         val pdfs = Gson().fromJson(stateSaver.getText("pdfs"),Array<PDF>::class.java)
-        val list = mutableListOf<PDF>()
-        for (pdf in pdfs) if (pdf.module == module_id) list.add(pdf)
+        val playlists = Gson().fromJson(stateSaver.getText("playlists"),Array<Playlist>::class.java)
+        val finalPdfList = mutableListOf<PDF>()
+        val finalPlaylistsList = mutableListOf<Playlist>()
+        for (pdf in pdfs) if (pdf.module == module_id) finalPdfList.add(pdf)
+        for (pl in playlists) if (pl.module == module_id) finalPlaylistsList.add(pl)
         var tp = false
         var td = false
         var exam = false
         var livres = false
-        for (pdf in list) if (pdf.type == "TP") {
+        var pl = false
+        for (pdf in finalPdfList) if (pdf.type == "TP") {
             tp = true
             break
         }
-        for (pdf in list) if (pdf.type == "TD") {
+        for (pdf in finalPdfList) if (pdf.type == "TD") {
             td = true
             break
         }
-        for (pdf in list) if (pdf.type == "Tests/Examens") {
+        for (pdf in finalPdfList) if (pdf.type == "Tests/Examens") {
             exam = true
             break
         }
-        for (pdf in list) if (pdf.type == "Livres") {
+        for (pdf in finalPdfList) if (pdf.type == "Livres") {
             livres = true
             break
         }
+        if (finalPlaylistsList.isNotEmpty()) pl = true
+
 
         val adapter = AdapterType(
-            list = list,
+            pdfList = finalPdfList,
+            playlist = finalPlaylistsList,
             fm = supportFragmentManager,
             td = td,
             tp = tp,
             exam = exam,
-            books = livres
+            books = livres,
+            playlists = pl
         )
         b.viewPager.adapter = adapter
         b.tabLayout.setupWithViewPager(b.viewPager)

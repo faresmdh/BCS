@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/bnv_home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home"/>
+
+    <item android:id="@+id/bnv_dev"
+        android:title="@string/dev_channel"
+        android:icon="@drawable/ic_dev"/>
+
+    <item android:id="@+id/bnv_profile"
+        android:title="@string/account"
+        android:icon="@drawable/ic_user"/>
+
+</menu>

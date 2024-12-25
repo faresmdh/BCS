@@ -13,6 +13,8 @@ import io.github.jan.supabase.postgrest.Postgrest
 import io.github.jan.supabase.postgrest.postgrest
 import io.github.jan.supabase.postgrest.query.Columns
 import io.github.jan.supabase.postgrest.query.Order
+import m.ify.bouiracomputerscience.API.DevPost
+import m.ify.bouiracomputerscience.API.Playlist
 import m.ify.computersciencebouira.Helpers.StateSaver
 
 class DB {
@@ -67,25 +69,31 @@ class DB {
         }.decodeList<PDF>()
     }
 
+    suspend fun getPlaylists(): List<Playlist> {
+        return supabase.postgrest.from("playlists").select(Columns.ALL){
+            order("title",Order.ASCENDING)
+        }.decodeList<Playlist>()
+    }
+
+    suspend fun getDevPosts():List<DevPost>{
+        return supabase.postgrest.from("dev_channel").select(Columns.ALL){
+            order("created_at",Order.DESCENDING)
+        }.decodeList()
+    }
+
     suspend fun signOut(){
         supabase.auth.signOut(SignOutScope.GLOBAL)
     }
 
     suspend fun changePassword(context: Context, old:String, new:String){
         val emailStr = Gson().fromJson(StateSaver(context).getText("student"),Student::class.java).email
-        Log.d("Fares email is here :",emailStr)
         supabase.auth.signInWith(Email){
             email = emailStr
             password = old
         }
-
-        Log.d("Fares email is signed in? :","yes")
-
         supabase.auth.updateUser {
             password = new
         }
-
-        Log.d("Fares password updated? :","yes")
     }
 
 }

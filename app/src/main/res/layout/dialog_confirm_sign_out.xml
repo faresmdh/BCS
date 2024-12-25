@@ -9,12 +9,6 @@
     android:background="@drawable/bg_bottom_sheet_dialog"
     android:paddingHorizontal="16dp">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:lottie_rawRes="@raw/sign_out"
-        app:lottie_autoPlay="true"/>
-
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"

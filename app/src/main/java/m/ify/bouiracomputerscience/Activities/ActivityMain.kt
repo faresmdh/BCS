@@ -2,52 +2,45 @@ package m.ify.computersciencebouira.Activities
 
 
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Bundle
-import android.util.Log
-import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.setPadding
 import androidx.lifecycle.lifecycleScope
-import com.google.gson.Gson
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.auth.status.SessionStatus
 import kotlinx.coroutines.launch
-import m.ify.bouiracomputerscience.Activities.ActivityProfile
 import m.ify.computersciencebouira.API.DB
-import m.ify.computersciencebouira.Adapters.AdapterSemesters
+import m.ify.computersciencebouira.Adapters.AdapterBNV
 import m.ify.computersciencebouira.Helpers.StateSaver
 import m.ify.computersciencebouira.R
 import m.ify.computersciencebouira.databinding.ActivityMainBinding
+import org.bouncycastle.crypto.params.Blake3Parameters.context
+
 
 class ActivityMain : AppCompatActivity() {
 
     private lateinit var b: ActivityMainBinding
     private val db = DB()
     private lateinit var stateSaver: StateSaver
-    private lateinit var level: String
+    lateinit var bnv:BottomNavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         b = ActivityMainBinding.inflate(layoutInflater)
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(b.root)
 
         stateSaver = StateSaver(this)
-        level = stateSaver.getText("level").toString()
-        b.levelTV.text = level
+        bnv = b.bnv
+        b.viewPager.adapter = AdapterBNV(this.supportFragmentManager)
 
-        b.refresh.setOnClickListener {
-            stateSaver.setText("modules","null")
-            stateSaver.setText("pdfs","null")
-            checkData()
-        }
-
-
-        checkData()
-
-
-        b.logo.setOnClickListener {
-            startActivity(Intent(this, ActivityProfile::class.java))
-        }
+        adjustBottomNavigationPadding(bnv)
 
         lifecycleScope.launch {
             try {
@@ -56,6 +49,28 @@ class ActivityMain : AppCompatActivity() {
                 Toast.makeText(this@ActivityMain, e.message.toString(), Toast.LENGTH_SHORT).show()
             }
         }
+
+        b.bnv.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bnv_home -> {
+                    b.viewPager.setCurrentItem(0,true)
+                    true
+                }
+                R.id.bnv_dev -> {
+                    b.viewPager.setCurrentItem(1,true)
+                    true
+                }
+                R.id.bnv_profile -> {
+                    b.viewPager.setCurrentItem(2,true)
+                    true
+                }
+                else -> false
+            }
+        }
+
+        b.viewPager.offscreenPageLimit = 3
+
+
 
     }
 
@@ -76,42 +91,25 @@ class ActivityMain : AppCompatActivity() {
         }
     }
 
-    private fun checkData() {
-        val modules = stateSaver.getText("modules")
-        val pdfs = stateSaver.getText("pdfs")
-        if (modules == "null" || pdfs == "null") {
-            //data not downloaded yet (start loading)
-            b.loading.visibility = View.VISIBLE
-            b.viewPager.visibility = View.GONE
-            getData(true)
-        } else {
-            //data downloaded
-            updateUI()
-        }
+
+    fun isGestEnabled(): Boolean {
+        val resources: Resources = getResources()
+        val resourceId =
+            resources.getIdentifier("config_navBarInteractionMode", "integer", "android")
+        return resources.getInteger(resourceId) == 2
     }
 
-    fun updateUI() {
-        b.viewPager.adapter = AdapterSemesters(supportFragmentManager)
-        b.tabLayout.setupWithViewPager(b.viewPager)
-        b.loading.visibility = View.GONE
-        b.viewPager.visibility = View.VISIBLE
-    }
-
-    private fun getData(iSFirstTime: Boolean = false) {
-        lifecycleScope.launch {
-            try {
-                val modules = db.getModules()
-                val pdfs = db.getPDFs()
-                stateSaver.setText("modules", Gson().toJson(modules))
-                stateSaver.setText("pdfs", Gson().toJson(pdfs))
-                updateUI()
-            } catch (e: Exception) {
-                Log.d("Fares error is here:", e.message.toString())
-                if (iSFirstTime) {
-                    //show error
-                    Toast.makeText(this@ActivityMain, getString(R.string.restart), Toast.LENGTH_SHORT).show()
-                }
+    fun adjustBottomNavigationPadding(bnv: BottomNavigationView) {
+        ViewCompat.setOnApplyWindowInsetsListener(bnv) { view, insets ->
+            val bottomInset = insets.systemGestureInsets.bottom
+            // Adjust the padding to account for gesture navigation if it's enabled
+            if (isGestEnabled()) {
+                view.setPadding(0, 0, 0, 0)
+            } else {
+                view.setPadding(0, 0, 0, bottomInset)
             }
+            insets
         }
     }
+
 }

@@ -28,7 +28,7 @@ class AdapterPDFs(private val context: Context, private val data: MutableList<PD
     override fun onBindViewHolder(holder: AdapterPDFs.ViewHolder, position: Int) {
         holder.title.text = data[position].title
         val pdfPath = File(context.getExternalFilesDir(null), "/"+data[position].id.toString() + ".pdf")
-        holder.offlineIV.visibility = if (pdfPath.exists()) View.VISIBLE else View.GONE
+        holder.networkIV.visibility = if (pdfPath.exists()) View.GONE else View.VISIBLE
         holder.card.setOnClickListener {
             if (pdfPath.exists()){
                 val intent = Intent(context,ActivityPDF::class.java)
@@ -38,7 +38,7 @@ class AdapterPDFs(private val context: Context, private val data: MutableList<PD
                 context.startActivity(intent)
             }else{
                 if (NetworkChecker(context).isConnectedWithDialog()){
-                    downloadPDF(data[position],holder.offlineIV)
+                    downloadPDF(data[position],holder.networkIV)
                 }
             }
         }
@@ -48,14 +48,14 @@ class AdapterPDFs(private val context: Context, private val data: MutableList<PD
         return data.size
     }
 
-    private fun downloadPDF(pdf: PDF, offlineIV: ImageView) {
+    private fun downloadPDF(pdf: PDF, networkIV: ImageView) {
         val dialogs = Dialogs(context)
         dialogs.startLoadingDialog()
         FileDownloader(
             context,
             pdf,
             dialogs,
-            offlineIV
+            networkIV
         ).downloadWithProgressDialog()
     }
 
@@ -63,7 +63,7 @@ class AdapterPDFs(private val context: Context, private val data: MutableList<PD
 
 
         val title: TextView = itemView.findViewById(R.id.title)
-        val offlineIV: ImageView = itemView.findViewById(R.id.offlineIV)
+        val networkIV: ImageView = itemView.findViewById(R.id.networkIV)
         val card: MaterialCardView = itemView.findViewById(R.id.card)
 
 

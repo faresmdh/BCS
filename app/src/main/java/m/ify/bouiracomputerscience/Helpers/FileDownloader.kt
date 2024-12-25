@@ -19,7 +19,7 @@ class FileDownloader(
     private val context: Context,
     private val pdf: PDF,
     private val dialogs: Dialogs,
-    private val offlineIV: ImageView
+    private val networkIV: ImageView
 ) {
 
     private val downloadManager: DownloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
@@ -73,7 +73,7 @@ class FileDownloader(
 
             if (tmpFile.renameTo(finalFile)) {
                 // File moved successfully
-                offlineIV.visibility = View.VISIBLE
+                networkIV.visibility = View.GONE
                 openPdfFile()
             } else {
                 Toast.makeText(context, "Failed to move the downloaded file", Toast.LENGTH_SHORT).show()
