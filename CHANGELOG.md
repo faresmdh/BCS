@@ -1,9 +1,14 @@
 # BCS android Changelog
-## [2.1] - 2024-11-30
+## [2.5] - 2024-11-30
+### Added
+- Youtube playlists in modules activity
+- Dev channel
+- Sharing files option
 ### Updated
-- App name from Bouira Computer Science to Bouira Computer Society
+- User interface
+- integrated PDF reader
 ### Fixed
-- Downloading the wrong file name
+- Downloading the wrong file
 
 ## [2.0] - 2024-11-08
 ### Added
